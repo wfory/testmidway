@@ -4,11 +4,12 @@ import { Controller, Get, Provide,Inject } from '@midwayjs/decorator';
 @Controller('/')
 export class HomeController {
 
-  @Inject()
-  userService;
+
+  @Inject('bService')
+  bService;
   @Get('/')
   async home() {
-    this.userService.getUser({ uid:'123' })
+    this.bService.test()
     return 'Hello Midwayjs!';
   }
 }
